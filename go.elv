@@ -135,9 +135,9 @@ subcmd = [
     &doc=[@args]{
         current = $args[-1]
         if (-is-flag $current) {
-            cand -c 'Respect case when matching symbols'
+            cand -c   'Respect case when matching symbols'
             cand -cmd 'Treat a command (package main) like a regular package'
-            cand -u 'Show documentation for unexported as well as exported symbols, methods, and fields'
+            cand -u   'Show documentation for unexported as well as exported symbols, methods, and fields'
         } else {
             pkgs $current
         }
@@ -187,12 +187,12 @@ subcmd = [
     &get=[@args]{
         current = $args[-1]
         if (-is-flag $current) {
-            cand -d "stop after downloading the packages; that is, it instructs get not to install the packages"
-            cand -f "force get -u not to verify that each package has been checked out from the source control repository implied by its import path"
-            cand -fix "run the fix tool on the downloaded packages before resolving dependencies or building the code"
+            cand -d        "stop after downloading the packages; that is, it instructs get not to install the packages"
+            cand -f        "force get -u not to verify that each package has been checked out from the source control repository implied by its import path"
+            cand -fix      "run the fix tool on the downloaded packages before resolving dependencies or building the code"
             cand -insecure "permits fetching from repositories and resolving custom domains using insecure schemes such as HTTP. Use with caution"
-            cand -t "also download the packages required to build the tests for the specified packages"
-            cand -u "use the network to update the named packages and their dependencies"
+            cand -t        "also download the packages required to build the tests for the specified packages"
+            cand -u        "use the network to update the named packages and their dependencies"
             build-flags
         } else {
             pkgs $current
@@ -212,9 +212,9 @@ subcmd = [
         current = $args[-1]
         if (-is-flag $current) {
             build-flags
-            cand -f "specify an alternate format for the list, using the syntax of package template"
+            cand -f    "specify an alternate format for the list, using the syntax of package template"
             cand -json "cause the package data to be printed in JSON format instead of using the template format"
-            cand -e "change the handling of erroneous packages, those that cannot be found or are malformed"
+            cand -e    "change the handling of erroneous packages, those that cannot be found or are malformed"
         } else {
             pkgs $current
         }
@@ -234,10 +234,10 @@ subcmd = [
         current = $args[-1]
         if (-is-flag $current) {
             cand -args "Pass the remainder of the command line (everything after -args) to the test binary, uninterpreted and unchanged"
-            cand -c "Compile the test binary to pkg.test but do not run it"
+            cand -c    "Compile the test binary to pkg.test but do not run it"
             cand -exec "Run the test binary using a program"
-            cand -i "Install packages that are dependencies of the test. Do not run the test"
-            cand -o file "Compile the test binary to the named file. The test still runs (unless -c or -i is specified)"
+            cand -i    "Install packages that are dependencies of the test. Do not run the test"
+            cand -o    "Compile the test binary to the named file. The test still runs (unless -c or -i is specified)"
             build-flags
         } else {
             pkgs $current
