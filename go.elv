@@ -78,11 +78,8 @@ fn pkgs [f]{
         if (eq $dir ./) {
             dir = ''
         }
-        # XXX: Uses $pwd, not concurrency-safe.
         for go-src [(-go-paths)/src] {
-            pwd=$go-src {
-                put $dir* | pick-dirs
-            }
+            put $go-src/$dir* | pick-dirs | each [x]{ put $x[(count $go-src/):] }
         }
     }
 }
