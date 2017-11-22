@@ -112,6 +112,7 @@ subcmd = [
             cand -o "write the resulting executable or object to the named output file"
             cand -i "install the packages that are dependencies of the target"
         } else {
+            go-files $current
             pkgs $current
         }
     }
