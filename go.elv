@@ -9,7 +9,7 @@ fn cand [text desc]{
     edit:complex-candidate $text &display-suffix=' '(spaces (- 14 (wcswidth $text)))$desc
 }
 
-'&subcmds' = (constantly (
+subcmds~ = (constantly (
     cand build       "compile packages and dependencies"
     cand clean       "remove object files"
     cand doc         "show documentation for package or symbol"
@@ -28,7 +28,7 @@ fn cand [text desc]{
     cand vet         "run go tool vet on packages"
 ))
 
-'&build-flags' = (constantly (
+build-flags~ = (constantly (
     cand -a             "force rebuilding of packages that are already up-to-date"
     cand -n             "print the commands but do not run them"
     cand -p             "the number of programs that can be run in parallel"
@@ -276,4 +276,4 @@ fn compl [@words]{
     }
 }
 
-edit:arg-completer[go] = $&compl
+edit:arg-completer[go] = $compl~
