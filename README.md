@@ -1,4 +1,3 @@
-# Elvish Completion Scripts
+# MOVED
 
-These scripts are based on Elvish HEAD. If you are using an older version,
-some scripts might not work.
+Moved to [github.com/xiaq/edit.elv](https://github.com/xiaq/edit.elv).
